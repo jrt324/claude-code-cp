@@ -1,0 +1,45 @@
+<idea-plugin>
+    <id>com.jrt.copyfilelocation</id>
+    <name>Claude Code Copy Code</name>
+    <version>1.0.0</version>
+    <vendor email="jrt324@gmail.com" url="https://jintan.cnblogs.com">Jrt</vendor>
+
+    <description><![CDATA[
+    A plugin that copies the current file location with optional line numbers to the clipboard.
+    Use Ctrl+Shift+Alt+K to copy file location. If text is selected, includes line numbers in format @/path/to/file#L1-5.
+    If no text is selected, copies just the file path in format @/path/to/file.
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <em>1.0.0</em>
+    <ul>
+        <li>Initial release with copy file location functionality</li>
+        <li>Support for line number ranges when text is selected</li>
+        <li>Configurable keyboard shortcut (default: Ctrl+Shift+Alt+K)</li>
+    </ul>
+    ]]></change-notes>
+
+    <idea-version since-build="203"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="Copy File Location" displayType="BALLOON"/>
+        <applicationConfigurable parentId="tools"
+                                instance="com.jrt.copyfilelocation.CopyFileLocationConfigurable"
+                                id="com.jrt.copyfilelocation.configurable"
+                                displayName="ClaudeCode Copy Code"/>
+    </extensions>
+
+    <actions>
+        <action id="CopyFileLocationAction"
+                class="com.jrt.copyfilelocation.CopyFileLocationAction"
+                text="Copy File Location"
+                description="Copy current file location with optional line numbers">
+            <add-to-group group-id="EditMenu" anchor="after" relative-to-action="CopyReference"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift alt K"/>
+        </action>
+    </actions>
+</idea-plugin>
