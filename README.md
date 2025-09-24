@@ -13,6 +13,13 @@ A JetBrains IDE plugin that allows you to quickly copy file locations with optio
 
 ## Installation
 
+### From Releases (Recommended)
+1. Download the latest plugin ZIP (claude-code-cp-plugin-x.x.x.zip) from [Releases](https://github.com/jrt324/claude-code-cp/releases)
+2. Install in your IDE:
+   - Go to **File** → **Settings** → **Plugins**
+   - Click the gear icon → **Install Plugin from Disk...**
+   - Select the downloaded ZIP file
+
 ### From Source
 1. Clone this repository
 2. Run `./gradlew buildPlugin`
@@ -28,7 +35,9 @@ A JetBrains IDE plugin that allows you to quickly copy file locations with optio
 
 1. Open any file in your JetBrains IDE
 2. Optionally select some text to include line numbers
-3. Press **Ctrl+Shift+C** or use **Edit** → **Copy File Location**
+3. Press the keyboard shortcut or use **Edit** → **Copy File Location**:
+   - **Windows/Linux**: `Ctrl+Alt+Shift+K`
+   - **macOS**: `Cmd+Option+Shift+K`
 4. The file location will be copied to your clipboard
 
 ## Examples
