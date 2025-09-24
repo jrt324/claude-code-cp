@@ -1,0 +1,1 @@
+rootProject.name = "claude-code-cp-plugin"
