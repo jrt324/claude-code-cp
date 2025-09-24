@@ -50,8 +50,16 @@ A JetBrains IDE plugin that allows you to quickly copy file locations with optio
 
 ## Configuration
 
+### Keyboard Shortcut
 The keyboard shortcut can be changed in:
 **File** → **Settings** → **Keymap** → Search for "Copy File Location"
+
+### Path Format
+You can configure whether to copy absolute or relative paths:
+**File** → **Settings** → **Tools** → **Claude Code Copy Location** → **Use relative paths**
+
+- **Enabled (default)**: Copies relative paths like `@src/main/java/Example.java`
+- **Disabled**: Copies absolute paths like `@/home/user/project/src/main/java/Example.java`
 
 ## Compatibility
 
